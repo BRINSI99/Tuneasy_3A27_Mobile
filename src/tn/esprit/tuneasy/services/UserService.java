@@ -104,11 +104,11 @@ public class UserService {
         try {
             Map<String, Object> userListJson = j.parseJSON(new CharArrayReader(jsonText.toCharArray()));
             User user = new User();
-//            user.setId((int) Float.parseFloat(userListJson.get("id").toString()));
-//            user.setEmail(userListJson.get("email").toString());
-//            user.setPassword(userListJson.get("password").toString());
-//            user.setPrenom(userListJson.get("firstname").toString());
-//            user.setNom(userListJson.get("lastname").toString());
+            user.setId((int) Float.parseFloat(userListJson.get("id").toString()));
+            user.setEmail(userListJson.get("email").toString());
+            user.setPassword(userListJson.get("password").toString());
+            user.setPrenom(userListJson.get("firstname").toString());
+            user.setNom(userListJson.get("lastname").toString());
             userArrayList.add(user);
         } catch (IOException e) {
             e.printStackTrace();

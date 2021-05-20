@@ -41,6 +41,7 @@ public class LoginForm extends Form {
                 user.setPassword(passwordTextField.getText());
                 if (userService.login(user)) {
                     LoginSession.emailUser = emailTextField.getText();
+                   LoginSession.loggedUser =  userService.findUser(emailTextField.getText()).getId();
                     new HomeForm().show();
                 } else {
                     System.out.println("user doesnt exist");

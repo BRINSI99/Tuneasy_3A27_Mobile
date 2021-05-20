@@ -93,4 +93,18 @@ public class CompetitionService {
         NetworkManager.getInstance().addToQueueAndWait(req);
         return competitionArrayList;
     }
+
+    public boolean delete() {
+       String url = Database.BASE_URL  + "competition/api/delete?id="+LoginSession.loggedUser ; // Add Symfony URL here
+        req.setUrl(url);
+        req.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                resultOK = req.getResponseCode() == 200; //Code HTTP 200 OK
+                req.removeResponseListener(this);
+            }
+        });
+        NetworkManager.getInstance().addToQueueAndWait(req);
+        return resultOK;
+    }
 }

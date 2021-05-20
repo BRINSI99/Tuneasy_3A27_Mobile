@@ -11,6 +11,6 @@ package tn.esprit.tuneasy.utils;
  */
 public class LoginSession {
    
-    public static int loggedUser = 0;
+    public static int loggedUser = 222;
     public static String emailUser = "";
 }

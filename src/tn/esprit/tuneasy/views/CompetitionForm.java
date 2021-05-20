@@ -78,6 +78,9 @@ Form current;
         /* *** *SIDE MENU* *** */
         getToolbar().addCommandToLeftSideMenu("", null, (evt) -> {
         });
+         getToolbar().addCommandToLeftSideMenu("Home", null, (evt) -> {
+            new HomeForm().show();
+        });
         getToolbar().addCommandToLeftSideMenu("Competitions", null, (evt) -> {
             new CompetitionForm(0).show();
         });
@@ -85,7 +88,7 @@ Form current;
             new CompetitionForm(1).show();
         });
         getToolbar().addCommandToLeftSideMenu("Profil", null, (evt) -> {
-          //  new ProfilForm().show();
+            new ProfilForm().show();
         });
     }
 
